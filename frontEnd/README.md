@@ -1,6 +1,6 @@
 # Frontend
 
-<img src="https://incamotors.com.pe/ezgif.gif" width="400" height="400" />
+<img src="https://incamotors.com.pe/ezgif.gif" width="800" height="600" />
 
 # install @vue/cli
 
