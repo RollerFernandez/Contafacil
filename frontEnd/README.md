@@ -5,7 +5,8 @@
 npm install
 ```
 
-## Configure url backend
+## Configure url backend 
+File : main.js
 
 ```
 Vue.prototype.$developer = 'http://localhost:3000/'
