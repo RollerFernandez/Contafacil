@@ -5,6 +5,13 @@
 npm install
 ```
 
+## Configure url backend
+
+```
+Vue.prototype.$developer = 'http://localhost:3000/'
+Vue.prototype.$production = 'http://localhost:3000/'
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
