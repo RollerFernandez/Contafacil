@@ -1,7 +1,5 @@
 # backend
 
-# database
-
 Paso 1: execute script 
   - database/creacion_objetos.sql
   - database/inserts.sql
