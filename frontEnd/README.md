@@ -1,4 +1,10 @@
-# frontend
+# Frontend
+
+# install @vue/cli
+
+```
+npm install -g @vue/cli
+```
 
 ## Project setup
 ```
