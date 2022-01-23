@@ -24,6 +24,23 @@ To only install resolved dependencies in `package-lock.json`:
 npm ci
 ```
 
+## Update configure database connection
+
+File: datasources/connection.datasource.ts
+
+```
+const config = {
+  name: 'connection',
+  connector: 'mysql',
+  url: '',
+  host: 'localhost',
+  port: 3307,
+  user: 'root',
+  password: 'password',
+  database: 'dbcontafacil'
+};
+```
+
 ## Run the application
 
 ```sh
