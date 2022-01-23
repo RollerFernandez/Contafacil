@@ -1,6 +1,6 @@
 # Frontend
 
-<img src="https://i.gifer.com/3OIjK.gif" width="40" height="40" />
+<img src="https://i.gifer.com/3OIjK.gif" width="200" height="200" />
 
 # install @vue/cli
 
