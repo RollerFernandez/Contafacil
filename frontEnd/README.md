@@ -5,7 +5,7 @@
 npm install
 ```
 
-## Configure url backend 
+## Update configure url ApiRest (backend) 
 File : main.js
 
 ```
