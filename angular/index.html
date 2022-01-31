@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp" id="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depositos Ahorro Hogar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body >
+    <div  ng-controller="DepositCtrl">
+        <h4 class="bg-primary text-white text-center p-3">
+           Depositos Ahorro Hogar
+        </h4>
+    
+        <section class="h-100 gradient-form">
+          <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-xl-12">
+                <div class="card rounded-3 text-black">
+                  <div class="row g-0">
+                    <div class="col-lg-5">
+                      <div class="card-body  mx-md-5">
+    
+                        <div class="text-center">
+                          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" style="width: 185px;" alt="logo">
+                          <h4 class="mt-1 mb-5 pb-1">Reporte Mensual Depositos</h4>
+                        </div>
+    
+                          <div class="form-outline input-group-md mb-2">
+                            <label class="form-label" >Familia</label>
+                            <select class="form-control" ng-model="model.cbFamily" >
+                                <option value="">Seleccione Familia</option>
+                                <option ng-repeat="f in families" value={{f.id}}>{{f.name}}</option>
+                            </select>                    
+                          </div>
+    
+                          <div class="form-outline input-group-md mb-2">
+                            <label class="form-label" >Métrica</label>
+                            <select class="form-control"  ng-model="model.cbMetrica" >
+                                <option value="">Seleccione Metrica</option>
+                                <option ng-repeat="m in metricas" value={{m.id}} >{{m.type}}</option>
+                            </select> 
+                          </div>
+    
+                          <div class="form-outline input-group-md mb-2">
+                            <label class="form-label" >Año</label>
+                            <input type="text"  ng-model="model.txtYear" class="form-control" />
+                          </div>
+    
+                          <div class="text-center pt-1">
+                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2" ng-click="getResumen()" type="button">Buscar</button>
+                          </div>
+                      </div>
+                   
+                    </div>
+                    <div class="col-lg-5 mt-5"  ng-if="resumen.length">
+                      <div class="card-body  mx-md-5" >
+                        <div >
+                            <h4 class="mb-4 text-center">Resumen de depositos</h4>
+                        
+                          <table class="table" >
+                              <thead class="thead-dark">
+                                <tr>
+                                  <th scope="col">Mes</th>
+                                  <th scope="col">{{type}}</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr ng-repeat="r in resumen" >
+                                  <td>{{r.mes}}</td>
+                                  <td><span class="badge badge-primary badge-pill">{{r.min!=null ? r.min  :r.max!=null ? r.max: r.avg!=null ? r.avg:r.total!=null ? r.total:'0' }}</span></td>
+                                </tr>
+                              </tbody>
+                          </table>
+                        </div>
+                          
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row" ng-if="resumen.length">
+                    <div class="card-body">
+                        <h4 class="mb-4 text-center">Cuadro Depositos</h4>
+                          <div>
+                            <div apexcharts options="bar"></div>
+                            <!-- <apexchart  type="bar" :options="options" :series.sync="series"></apexchart> -->
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+</body>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/apexcharts.angularjs.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.8.3/apexcharts.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="js/Module/app.js"></script>
+<script type="text/javascript" src="js/Controller/DepositCtrl.js"></script>
+<script type="text/javascript" src="js/Services/DepositService.js"></script>
+</html>
