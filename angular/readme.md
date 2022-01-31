@@ -1,3 +1,3 @@
 # Contafacil Challenger
 
-![Alt Text](https://incamotors.com.pe/angular.gif)
+![Alt Text](https://incamotors.com.pe/angularjs.gif)
